@@ -1,0 +1,79 @@
+@import './functions';
+@import './mixins';
+
+// --------  colors  -------
+
+$color-black: #262626; // hsl 0 0 0.15
+$color-charcoal: #404040; // hsl 0 0 0.25
+$color-gray: #A6A6A6; // hsl 0 0 0.65
+$color-white: #FFF; // hsl 0 0 0
+$color-white-a15: transparentize($color-white, 0.85);
+$color-white-a65: transparentize($color-white, 0.35);
+$color-white-a85: transparentize($color-white, 0.15);
+$color-white-a100: transparentize($color-white, 1);
+$color-charcoal-a15: transparentize($color-charcoal, 0.85);
+$color-charcoal-a45: transparentize($color-charcoal, 0.55);
+$color-charcoal-a65: transparentize($color-charcoal, 0.35);
+$color-charcoal-a85: transparentize($color-charcoal, 0.15);
+
+$color-red: #EB475B; // hsl(0.98, 0.8, 0.6);
+$color-red-10: tint($color-red, 10%);
+$color-red-20: tint($color-red, 20%);
+$color-red-30: tint($color-red, 30%);
+$color-pink: #EB4796; // hsl(0.92, 0.8, 0.6);
+$color-pink-10: tint($color-pink, 10%);
+$color-pink-20: tint($color-pink, 20%);
+$color-pink-30: tint($color-pink, 30%);
+$color-purple: #9947EB; // hsl(0.75, 0.8, 0.6);
+$color-purple-10: tint($color-purple, 10%);
+$color-purple-20: tint($color-purple, 20%);
+$color-purple-30: tint($color-purple, 30%);
+$color-indigo: #5E47EB; // hsl(0.69, 0.8, 0.6);
+$color-indigo-10: tint($color-indigo, 10%);
+$color-indigo-20: tint($color-indigo, 20%);
+$color-indigo-30: tint($color-indigo, 30%);
+$color-blue: #476BEB; // hsl(0.63, 0.8, 0.6);
+$color-blue-10: tint($color-blue, 10%);
+$color-blue-20: tint($color-blue, 20%);
+$color-blue-30: tint($color-blue, 30%);
+$color-cyan: #47EBEB; // hsl(0.5, 0.8, 0.6);
+$color-cyan-10: tint($color-cyan, 10%);
+$color-cyan-20: tint($color-cyan, 20%);
+$color-cyan-30: tint($color-cyan, 30%);
+$color-green: #47EB9C; // hsl(0.42, 0.8, 0.6);
+$color-green-10: tint($color-green, 10%);
+$color-green-20: tint($color-green, 20%);
+$color-green-30: tint($color-green, 30%);
+$color-yellow: #EBE447; // hsl(0.16, 0.8, 0.6);
+$color-yellow-10: tint($color-yellow, 10%);
+$color-yellow-20: tint($color-yellow, 20%);
+$color-yellow-30: tint($color-yellow, 30%);
+$color-orange: #EB6547; // hsl(0.03, 0.8, 0.6);
+$color-orange-10: tint($color-orange, 10%);
+$color-orange-20: tint($color-orange, 20%);
+$color-orange-30: tint($color-orange, 30%);
+
+// ---------  font  --------
+
+$font-size-base: 16px;
+$font-size-medium: 1.3rem;
+$font-size-large: 1.5rem;
+
+// --------  sizes  --------
+
+$size-gutter: 2;
+
+// -------  screens  -------
+
+$screen-sm-min: 30rem !default;
+$screen-md-min: 35rem !default;
+$screen-lg-min: 40rem !default;
+
+// -------  shadows  -------
+
+$shadow-base: 0 0 0.5rem $color-charcoal-a15;
+$shadow-outline: 0 0 0.65rem -0.05rem $color-blue;
+
+// ---------  border  --------
+
+$border-standard: 0.1rem $color-charcoal-a65 solid;
