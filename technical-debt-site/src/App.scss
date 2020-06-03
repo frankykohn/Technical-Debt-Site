@@ -1,0 +1,36 @@
+@import './style/mixins';
+
+body {
+  overflow-x: hidden;
+}
+
+.content-container {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.sc-container {
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: 100;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Gruppo&display=swap');
+
+h1 {
+  font-family: 'Abel', sans-serif;
+  font-weight: 400;
+  @include transform(scale(2,1));
+  padding: 10px;
+}

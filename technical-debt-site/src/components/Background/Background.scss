@@ -1,11 +1,11 @@
 @import '../../style/config';
 
 
-$boxCount: 100;
+$boxCount: 50;
 $baseSize: 20rem;
 $tilt: 45;
-$colorSet: $color-red-30,
-    $color-pink-30,
+$colorSet:
+    $color-red-30,
     $color-purple-30,
     $color-indigo-30,
     $color-blue-30,
@@ -16,19 +16,20 @@ $colorSet: $color-red-30,
     $color-red-30;
 
 .background {
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     position: fixed;
     background: $color-pink-30;
-    overflow: hidden;
+    z-index: -1;
 }
 .background div {
     position: absolute;
-    //
+
     // animation-duration: 20s;
     // animation-iteration-count: infinite;
     // animation-name: box-animation-1;
     opacity: 25%;
+    transition: opacity 0.5s ease-out;
     will-change: transform;
     filter: blur(9px);
     @for $i from 1 through $boxCount {
@@ -39,8 +40,34 @@ $colorSet: $color-red-30,
           top: random(120) * 1% - 10;
           left: random(120) * 1% - 10;
           background-color: nth($colorSet, random(length($colorSet)));
+          &:hover {
+              opacity: 75%;
+          }
+
       }
     }
+}
+
+.news-feed-container {
+  position: fixed;
+  height: 98%;
+  width: 8%;
+  padding: 4px;
+  margin: 4px;
+  box-shadow: 5px 5px;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  &-left {
+    @extend .news-feed-container;
+    left: 0%;
+  }
+  &-right {
+    @extend .news-feed-container;
+    left: 91%;
+  }
+
+
 }
 @keyframes box-animation-1 {
   0% {
