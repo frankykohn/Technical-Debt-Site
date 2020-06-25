@@ -24,13 +24,7 @@ $colorSet:
 }
 .background div {
     position: absolute;
-
-    // animation-duration: 20s;
-    // animation-iteration-count: infinite;
-    // animation-name: box-animation-1;
-    opacity: 25%;
-    transition: opacity 0.5s ease-out;
-    will-change: transform;
+    transition: background-color 0.5s ease-out;
     filter: blur(9px);
     @for $i from 1 through $boxCount {
       &:nth-child(#{$i}) {
@@ -41,7 +35,7 @@ $colorSet:
           left: random(120) * 1% - 10;
           background-color: nth($colorSet, random(length($colorSet)));
           &:hover {
-              opacity: 75%;
+              background-color: white;
           }
 
       }
@@ -65,18 +59,5 @@ $colorSet:
   &-right {
     @extend .news-feed-container;
     left: 91%;
-  }
-
-
-}
-@keyframes box-animation-1 {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.75;
-  }
-  100% {
-    opacity: 0;
   }
 }

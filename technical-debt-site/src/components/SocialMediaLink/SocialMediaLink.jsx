@@ -4,7 +4,7 @@ import './SocialMediaLink.scss';
 export default function SocialMediaLink({ link, icon })
 {
   return (
-    <a href={link}>
+    <a className="social-media-link" href={link}>
       {icon}
     </a>
   )
