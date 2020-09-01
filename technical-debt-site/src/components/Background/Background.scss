@@ -15,6 +15,7 @@ $colorSet:
     $color-orange-30,
     $color-red-30;
 
+
 .background {
     width: 100%;
     height: 100%;
@@ -22,24 +23,11 @@ $colorSet:
     background: $color-pink-30;
     z-index: -1;
 }
-.background div {
+
+.box {
     position: absolute;
     transition: background-color 0.5s ease-out;
     filter: blur(9px);
-    @for $i from 1 through $boxCount {
-      &:nth-child(#{$i}) {
-          $randomizedSize: random() + $baseSize;
-          width: $randomizedSize;
-          height: $randomizedSize;
-          top: random(120) * 1% - 10;
-          left: random(120) * 1% - 10;
-          background-color: nth($colorSet, random(length($colorSet)));
-          &:hover {
-              background-color: white;
-          }
-
-      }
-    }
 }
 
 .news-feed-container {

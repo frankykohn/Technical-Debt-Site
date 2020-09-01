@@ -60,14 +60,14 @@ export default class MainPage extends Component {
                   <Row>
                     <Col sm={1}></Col>
                     <Col sm={10} className="content-container">
-                      <IFrameWrapper src="https://clips.twitch.tv/embed?clip=MoralNiceCodDerp&parent=technicaldebt.page" frameborder="0" scrolling="no" allowFullScreen="true"height="100%" width="100%"/>
+                      <IFrameWrapper src="https://clips.twitch.tv/embed?clip=MoralNiceCodDerp&parent=technicaldebt.page" frameBorder="0" scrolling="no" allowFullScreen={true} height="100%" width="100%"/>
                     </Col>
                     <Col sm={1}></Col>
                   </Row>
                   <Row>
                       <Col sm={1}/>
                       <Col sm={10} className="content-container">
-                        <IFrameWrapper width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/654622166&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"/>
+                        <IFrameWrapper width="100%" height="300" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/654622166&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"/>
                       </Col>
                       <Col sm={1}/>
                   </Row>
