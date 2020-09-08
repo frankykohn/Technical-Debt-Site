@@ -5,11 +5,12 @@ body {
     margin: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Gruppo&display=swap');
 
 h1 {
-  font-family: 'Abel', sans-serif;
-  font-weight: 400;
-  @include transform(scale(2,1));
-  padding: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 60px !important;
+  letter-spacing: -0.1em;
+  @include transform(scale(1.8,0.8));
+  padding: 0px;
 }

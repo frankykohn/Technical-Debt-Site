@@ -27,7 +27,7 @@ export default class MainPage extends Component {
                 <Col sm={2}/>
                 <Col sm={8} className="content-container-header">
                   <Row>
-                    <Col sm={12} >
+                    <Col sm={12}>
                       <h1 className="header-container">Technical Debt</h1>
                     </Col>
                     <Col sm={12}>

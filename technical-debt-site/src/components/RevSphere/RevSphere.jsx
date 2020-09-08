@@ -23,8 +23,9 @@ class ScrollingText {
     update() {
 
     }
-
 }
+
+
 
 export default class RevSphere extends Component {
 
