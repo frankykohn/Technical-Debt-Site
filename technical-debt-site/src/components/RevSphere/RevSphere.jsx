@@ -7,6 +7,24 @@ import {
 
 import p5 from 'p5';
 
+class ScrollingText {
+
+    constructor(x, y, b) {
+        this.x = x;
+        this.y = y;
+        this.prominence = b;
+    }
+
+    draw(p) {
+        p.textFont('Garamond');
+        p.text('Technical Debt');
+    }
+
+    update() {
+
+    }
+
+}
 
 export default class RevSphere extends Component {
 
@@ -17,64 +35,89 @@ export default class RevSphere extends Component {
 
     sketch = p => {
 
-        let wiggle = 10;
+        const numPoints = 40;
+        const numText = 10;
+        const wiggle = 8;
         let r = 200;
-        let numPoints = 60;
+
+
         let sphere = [];
+        let text = [];
+        let sphereColors = [];
+        let scrollRotation = 0;
+        const rotationScale = 0.005;
+
+        p.preload = () => {
+
+        }
 
         p.setup = () => {
-            p.createCanvas(800, 800, p.WEBGL);
+            const size = Math.min(p.windowWidth, p.windowHeight)
+            p.createCanvas(size, size, p.WEBGL);
             p.colorMode(p.HSB);
 
+            text.push(new ScrollingText(p.random()))
             for(let i=0; i < numPoints +1; i++){
-              let lat = p.map(i, 0, numPoints, -p.HALF_PI, p.HALF_PI);
+              let lat = p.map(i, 0, numPoints, 0, p.PI);
               sphere.push([]);
+              sphereColors.push(p.map(i, 0, numPoints, 150, 320));
               for(let j=0; j < numPoints+1; j++){
-                  let lon = p.map(j, 0, numPoints, -p.PI, p.PI);
-                  const x = r * p.sin(lon) * p.cos(lat) + p.random(-wiggle, wiggle);
-                  const y = r * p.sin(lon) * p.sin(lat) + p.random(-wiggle, wiggle);
-                  const z = r * p.cos(lon) + p.random(-wiggle, wiggle);
+                  let lon = p.map(j, 0, numPoints, 0, p.TWO_PI);
+                  const x = r * p.sin(lat) * p.cos(lon) + p.random(-wiggle, wiggle);
+                  const y = r * p.sin(lat) * p.sin(lon) + p.random(-wiggle, wiggle);
+                  const z = r * p.cos(lat) + p.random(-wiggle, wiggle);
                   sphere[i][j] = p.createVector(x, y, z);
               }
+
             }
+
+        }
+
+        p.mouseWheel = (e) => {
+            scrollRotation += e.delta * rotationScale;
         }
 
         p.draw = () => {
             p.background(0);
 
             // lighting
-            p.lights();
+            // p.lights();
             p.ambientLight(255, 20, 255);
 
             // shape characteristics
+
             p.rotateZ(-p.PI/2);
             p.rotateY(-p.PI/2);
             p.rotateX(p.PI/4);
+            p.rotateZ(scrollRotation);
             p.strokeWeight(0.5);
 
             for(let i=0; i < numPoints; i++){
-              p.beginShape(p.TRIANGLE_STRIP);
-              for(let j=0; j < numPoints+1; j++){
-                  const hu = p.map(j, 0, numPoints, 0, 255);
-                  p.stroke(hu, 200, 255);
-                  p.fill(hu, 255, 20);
+              p.stroke(sphereColors[i], 200, 255);
+              p.fill(sphereColors[i], 255, 50);
+              for(let j=0; j < numPoints; j++){
+
                   const v1 = sphere[i][j];
-                  p.vertex(v1.x, v1.y, v1.z);
                   const v2 = sphere[i+1][j];
-                  p.vertex(v2.x, v2.y, v2.z);
+                  const v3 = sphere[i][j+1];
+                  const v4 = sphere[i+1][j+1];
+
+                  p.beginShape(p.TRIANGLE_STRIP);
+                    p.vertex(v1.x, v1.y, v1.z);
+                    p.vertex(v2.x, v2.y, v2.z);
+                    p.vertex(v3.x, v3.y, v3.z);
+                    p.vertex(v4.x, v4.y, v4.z);
+                  p.endShape();
               }
-              p.endShape();
             }
 
-            p.fill(255, 0, 0);
-            p.noStroke();
-            p.sphere(r*0.95);
             p.stroke(255);
             p.strokeWeight(1);
             p.line(0, 0, -r*2, 0, 0, 0);
             p.line(0, 0, 0, 0, 0, r*2);
             p.resetMatrix();
         }
+
     }
 
     componentDidMount() {
@@ -85,67 +128,3 @@ export default class RevSphere extends Component {
         return <div ref={this.sphereRef}></div>;
     }
 }
-
-
-/*
-
-PVector[][] globe;
-int total = 60;
-float r;
-float wiggle = 40;
-
-void setup()
-{
-    size(800, 800, P3D);
-    r = width/4;
-
-    colorMode(HSB);
-    globe = new PVector [total+1][total+1];
-
-    for(int i=0; i < total+1; i++){
-      float lat = map(i, 0, total, -HALF_PI, HALF_PI);
-      for(int j=0; j < total+1; j++){
-          float lon = map(j, 0, total, -PI, PI);
-          float x = r * sin(lon) * cos(lat) + random(-wiggle, wiggle);
-          float y = r * sin(lon) * sin(lat) + random(-wiggle, wiggle);
-          float z = r * cos(lon) + random(-wiggle, wiggle);
-          globe[i][j] = new PVector(x, y, z);
-      }
-    }
-}
-*//*
-void draw()
-{
-    background(0);
-    lights();
-    ambientLight(255, 20, 255);
-    pushMatrix();
-    translate(width/2, height/2);
-    rotateZ(-PI/2);
-    rotateY(-PI/2);
-    rotateX(PI/4);
-    strokeWeight(0.5);
-    for(int i=0; i < total; i++){
-      beginShape(TRIANGLE_STRIP);
-      for(int j=0; j < total+1; j++){
-          float hu = map(j, 0, total, 0, 255);
-          stroke(hu, 200, 255);
-          fill(hu, 255, 20);
-          PVector v1 = globe[i][j];
-          vertex(v1.x, v1.y, v1.z);
-          PVector v2 = globe[i+1][j];
-          vertex(v2.x, v2.y, v2.z);
-      }
-      endShape();
-    }
-    fill(255, 0, 0);
-    noStroke();
-    sphere(r*0.95);
-    stroke(255);
-    strokeWeight(1);
-    line(0, 0, -r*2, 0, 0, 0);
-    line(0, 0, 0, 0, 0, r*2);
-    popMatrix();
-
-}
-*/
