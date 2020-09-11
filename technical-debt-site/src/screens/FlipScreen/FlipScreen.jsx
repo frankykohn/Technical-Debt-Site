@@ -30,29 +30,45 @@ export default class FlipScreen extends Component {
         const imgPad = 20;
         return (
           <Container fluid style={{backgroundColor: 'black'}}>
-            <Row>
-              <Col sm={12}>
-                  <p className="title">Technical Debt</p>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={3} className="mesh-bar-container">
-                  <MeshBar/>
-              </Col>
-              <Col sm={6} className="mesh-bar-container">
-                <Col sm={12} className="flip-col">
-                    <a href="gallery"><p className="link-white">Gallery</p></a>
-                </Col>
-                <Col sm={12} className="flip-col">
-                    <img src="/flip-soundcloud-1000px.png" width="100%"></img>
-                </Col>
-              </Col>
-              <Col sm={3} className="mesh-bar-container">
-                  <MeshBar/>
-              </Col>
-            </Row>
+              <Row>
+                  <Col xs={12} md={9}>
+                      <Row>
+                          <Col xs={9}>
+                              <p className="title">Technical Debt</p>
+                          </Col>
+                          <Col xs={3}>
+                              <img src="/t-d.png" className="t-d"></img>
+                          </Col>
+                      </Row>
+                      <Row>
+                          <Col xs={3}>
+                              <MeshBar className="mesh-bar"/>
+                          </Col>
+                          <Col xs={9}>
+                              <Row>
+                                  <Col>
+                                      <p className="link-white"><a className="link-animation" href="gallery">Gallery</a></p>
+                                  </Col>
 
-
+                              </Row>
+                              <Row>
+                                  <Col>
+                                      <img className="flip-img" src="/flip-soundcloud-1000px.png"></img>
+                                  </Col>
+                              </Row>
+                          </Col>
+                      </Row>
+                  </Col>
+                  <Col>
+                    <Row>
+                      <Col>
+                          <img src="/20200731_technicaldebt_logo_v2_bryson.png" width="100px"></img>
+                      </Col>
+                    </Row>
+                    <Row>
+                    </Row>
+                  </Col>
+              </Row>
           </Container>
         )
     }

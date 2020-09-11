@@ -7,6 +7,8 @@ import {
 
 import p5 from 'p5';
 
+import './MeshBar.scss';
+
 class CustomVector {
     constructor(x, y, z, c)
     {
@@ -29,21 +31,24 @@ export default class MeshBar extends Component {
         let vertices = [];
 
         let cols, rows, count;
-
+        let width, height, size;
         const speed = 0.0005;
-        const width = p.windowWidth/4;
-        const height = p.windowHeight;
-        const size = width/15;
+
         p.preload = () => {
 
         }
 
-        p.setup = () => {
-
-            p.createCanvas(width, height, p.WEBGL);
-
+        function calculateDimensions() {
+            width = window.innerWidth/5;
+            height = Math.min(p.windowHeight*0.85);
+            size = width/15;
             cols = width/size;
             rows = height/size;
+        }
+
+        p.setup = () => {
+            calculateDimensions();
+            p.createCanvas(width, height, p.WEBGL);
             count = 0;
         }
 
@@ -68,6 +73,7 @@ export default class MeshBar extends Component {
         }
 
         p.windowResized = () => {
+            calculateDimensions();
             p.resizeCanvas(width, height);
         }
 
@@ -79,6 +85,5 @@ export default class MeshBar extends Component {
 
     render(){
         return <div ref={this.meshRef}></div>;
-
     }
 }
