@@ -41,12 +41,6 @@ export default class FlipScreen extends Component {
         const socialSize="10vh";
         return (
           <Container fluid className="flip-container">
-              <span className="flip-img-overlay link">
-                <br/>
-                Flip out now
-                <br/>
-                Artwork by Fran Tongson
-              </span>
               <Row>
                   <Col sm={12} md={9}>
                       <Row className="title-container">
@@ -68,8 +62,21 @@ export default class FlipScreen extends Component {
                                   </Col>
                               </Row>
                               <Row>
-                                  <Col>
-                                      <img className="flip-img" src="/flip-soundcloud-1000px.png"></img>
+                                  <Col className="flip-card-hover">
+                                    <div className="flip-card">
+                                      <div className="flip-card-inner">
+                                          <div className="flip-card-front">
+                                              <a className="flip-link" href={SOCIAL_LINK.FLIP_TONEDEN}><img className="flip-img" src="/flip-soundcloud-1000px.png"></img></a>
+                                          </div>
+                                          <div className="flip-card-back">
+                                            <div className="card-text">
+                                              <h2 className="card-title">Flip</h2>
+                                              <h3 className="card-subtitle">October 2020</h3>
+                                              <p className="card-footer">Artwork by <a className="link-animation-full" href="/">Emilia Tongson</a></p>
+                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
                                   </Col>
                               </Row>
                           </Col>
@@ -78,7 +85,7 @@ export default class FlipScreen extends Component {
                   <Col>
                     <Row>
                       <Col sm={6} md={12}>
-                          <img className="bryson-graphic" src="/20200731_technicaldebt_logo_v2_bryson.png"></img>
+                          <a href={SOCIAL_LINK.BRYSON}><img className="bryson-graphic" src="/20200731_technicaldebt_logo_v2_bryson.png"></img></a>
                       </Col>
                       <Col sm={12} md={12}>
                         <Row className="social-link-container">
