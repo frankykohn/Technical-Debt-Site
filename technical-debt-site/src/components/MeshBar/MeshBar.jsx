@@ -39,7 +39,7 @@ export default class MeshBar extends Component {
         }
 
         function calculateDimensions() {
-            width = window.innerWidth/5;
+            width = window.innerWidth/5.5;
             height = Math.min(p.windowHeight*0.85);
             size = width/15;
             cols = width/size;

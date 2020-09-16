@@ -7,6 +7,9 @@ body {
 
 html, body {
     height: 100%;
+    font-family: 'Cormorant Garamond', serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -17,4 +20,8 @@ h1 {
   letter-spacing: -0.1em;
   @include transform(scale(1.8,0.8));
   padding: 0px;
+}
+
+.react-icons {
+  vertical-align: middle;
 }

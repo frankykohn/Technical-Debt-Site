@@ -3,26 +3,23 @@ html, body {
     height: 100%;
 }
 
+body {
+
+}
+
+
+// ============= TEXT ========================
+
 .title {
-  font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
   color: white;
-  padding: 0px;
-  margin: 0px;
+  vertical-align: top !important;
+  margin-bottom: -10px;
   text-align: left;
-  font-size: 6vw;
+  font-size: 7vw;
   letter-spacing: -0.1em;
   @include transform(scale(1.8,0.8));
   transform-origin: 0;
-}
-
-.t-d {
-    width: 9vw;
-}
-
-.flip-img {
-    width: 100%;
-    height: 60vh;
 }
 
 .link {
@@ -30,6 +27,7 @@ html, body {
     font-size: 3vw;
     letter-spacing: -0.1em;
     transform-origin: 0;
+    margin-bottom: 0px;
     @include transform(scale(2,1));
     &-white {
         @extend .link;
@@ -39,17 +37,16 @@ html, body {
 
 .link-animation {
     color: white;
-}
-
-.link-animation:hover {
-    color: white;
-    text-decoration: none;
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
 }
 
 .link-animation::before {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 2px;
   bottom: 0;
   left: 0;
@@ -58,7 +55,171 @@ html, body {
   transition: all 0.3s ease-in-out 0s;
 }
 
+.link-white {
+    transition: all 0.3s ease;
+}
+
+.link-white:hover {
+    filter: blur(1px);
+}
+
 .link-animation:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+.social-link {
+    color: white;
+    transition: all 0.3s ease;
+
+    &-left {
+        @extend .social-link;
+        margin-left: -10%;
+    }
+    &-right {
+        @extend .social-link;
+    }
+    &:hover {
+        filter: blur(4px);
+    }
+}
+
+// ============= POSITIONING ==================
+
+.flip-container {
+    height: 100vh;
+    padding-bottom: 15px;
+}
+
+.title-container {
+    margin-bottom: -10px;
+}
+.t-d {
+    width: 6vw;
+    margin-top: 20px;
+}
+
+.body-container {
+    height: auto;
+}
+
+.flip-img {
+    margin-left: auto;
+    width: 100%;
+    height: 74vh;
+}
+
+.bryson-graphic {
+    height: 70vh;
+    margin-top: 3vh;
+    transition: all 0.5s ease;
+    &:hover {
+        filter: blur(4px)
+    }
+}
+
+.social-link-container {
+    margin-top: 3vh;
+    text-align: center;
+}
+
+// ============= ANIMATIONS ==================
+
+.flip-img {
+    animation: img_rotation 5s infinite;
+}
+
+.flip-img-overlay {
+    height: 30vw;
+    width: 20vw;
+    position: absolute;
+    left: 10px;
+    margin-left: -10vw;
+    top: 50%;
+    margin-top: -15vw;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    transform-origin: center;
+    animation: overlay_rotation 5s infinite;
+}
+
+
+@keyframes img_rotation {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  10% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  90% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes overlay_rotation {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  10% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  40% {
+    transform: rotateY(359deg);
+    opacity: 1;
+  }
+  60% {
+    transform: rotateY(359deg);
+    opacity: 1;
+  }
+  90% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .mesh-bar-container {
+      display: none;
+    }
+    .bryson-graphic {
+      display: none;
+    }
+    .social-link-left {
+        margin-left: 0px;
+    }
+    .title {
+        font-size: 6vh;
+    }
+    .link {
+        font-size: 4vh;
+    }
+    .t-d {
+      width: 7vh
+    }
+    .flip-img {
+        width: 100%;
+    }
 }
