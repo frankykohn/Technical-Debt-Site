@@ -13,14 +13,7 @@ html, body {
 }
 
 
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 700;
-  font-size: 60px !important;
-  letter-spacing: -0.1em;
-  @include transform(scale(1.8,0.8));
-  padding: 0px;
-}
+
 
 .react-icons {
   vertical-align: middle;

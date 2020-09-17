@@ -1,3 +1,5 @@
+@import '../../style/mixins';
+
 .content-container {
     border-style: solid;
     border-color: black;
@@ -25,6 +27,11 @@
   font-weight: 100;
 }
 
-.header-container {
-    padding: 0px;
+.header {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 100;
+  font-size: 7vw;
+  letter-spacing: -0.1em;
+  @include transform(scale(1.8,0.8));
+  padding: 0px;
 }

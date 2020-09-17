@@ -17,6 +17,10 @@ import {
 } from "react-icons/ti";
 
 import {
+  FaMixcloud
+} from "react-icons/fa";
+
+import {
   GrSpotify
 } from "react-icons/gr";
 
@@ -99,7 +103,7 @@ export default class FlipScreen extends Component {
                                 <a href={SOCIAL_LINK.SOUNDCLOUD}><ImSoundcloud className="social-link-left" size={socialSize}/></a>
                             </Col>
                             <Col xs={3} md={6}>
-                                <a href={SOCIAL_LINK.MIXCLOUD}><ImSoundcloud className="social-link-right" size={socialSize}/></a>
+                                <a href={SOCIAL_LINK.MIXCLOUD}><FaMixcloud className="social-link-right" size={socialSize}/></a>
                             </Col>
                         </Row>
                       </Col>

@@ -43,7 +43,7 @@ body {
 
 .card-subtitle {
     @include transform(scale(3,1));
-    font-size: 2vw;
+    font-size: 4vw;
     letter-spacing: -0.1em;
     font-weight: 700;
 }
@@ -254,10 +254,16 @@ body {
         position: fixed;
     }
     .title {
-        font-size: 6vh;
+        font-size: 7vh;
     }
     .link {
         font-size: 4vh;
+    }
+    .card-title {
+        font-size: 6vh;
+    }
+    .card-subtitle {
+        font-size: 5vh;
     }
     .t-d {
       width: 7vh
