@@ -49,11 +49,6 @@ export default class Background extends Component {
         }
     }
 
-    componentDidMount()
-    {
-        setTimeout(this.updateBoxes, 5000);
-    }
-
     randomColor = () => {
       return this.colorSet[Math.floor(Math.random() * this.colorSet.length)];
     }
@@ -62,7 +57,8 @@ export default class Background extends Component {
         for(let i=0; i < this.numBoxesChanged; i++){
           const newBox = Math.floor(Math.random() * (this.maxBoxes - 1));
           const newDiv = document.getElementById(newBox);
-          newDiv.style.backgroundColor = this.randomColor();
+          if(newDiv.style)
+              newDiv.style.backgroundColor = this.randomColor();
         }
     }
 
@@ -74,10 +70,10 @@ export default class Background extends Component {
             {this.state.boxes}
           </div>
           <div className="news-feed-container-left">
-              <img src="/banner-optimized.gif" width="100%" height="100%"></img>
+              <img alt="" src="/banner-optimized.gif" width="100%" height="100%"></img>
           </div>
           <div className="news-feed-container-right">
-              <img src="/banner-optimized.gif" width="100%" height="100%"></img>
+              <img alt="" src="/banner-optimized.gif" width="100%" height="100%"></img>
           </div>
         </div>
 
