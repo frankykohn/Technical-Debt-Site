@@ -71,7 +71,7 @@ export default class FlipScreen extends Component {
                                     <div className="flip-card">
                                       <div className="flip-card-inner">
                                           <div className="flip-card-front">
-                                              <a className="flip-link" href={SOCIAL_LINK.FLIP_TONEDEN}><img className="flip-img" alt="Flip Album Art" src="/flip-soundcloud-1000px.png"></img></a>
+                                              <a className="flip-link" href={SOCIAL_LINK.FLIP_TONEDEN}><img className="flip-img" alt="Flip Album Art" src="https://firebasestorage.googleapis.com/v0/b/technical-debt-site.appspot.com/o/flip-soundcloud-1000px.webp?alt=media&token=38d87efa-98e0-4591-b732-2140cda3894f"></img></a>
                                           </div>
                                           <div className="flip-card-back">
                                             <div className="card-text">

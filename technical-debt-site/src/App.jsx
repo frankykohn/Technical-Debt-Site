@@ -7,7 +7,8 @@ import FlipScreen from './screens/FlipScreen/FlipScreen';
 
 import {
   Route,
-  withRouter
+  withRouter,
+  Switch
 } from 'react-router-dom';
 
 import './App.scss';
@@ -18,16 +19,21 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path='/gallery'>
-        <Background/>
-        <MainPage/>
-      </Route>
-      {/*<Route exact path='/rev'>
-        <RevPage/>
-      </Route>*/}
-      <Route exact path='/'>
-        <FlipScreen/>
-      </Route>
+      <Switch>
+          <Route exact path='/gallery'>
+            <Background/>
+            <MainPage/>
+          </Route>
+          {/*<Route exact path='/rev'>
+            <RevPage/>
+          </Route>*/}
+          <Route exact path='/'>
+            <FlipScreen/>
+          </Route>
+          <Route>
+            <FlipScreen/>
+          </Route>
+      </Switch>
     </div>
   );
 }

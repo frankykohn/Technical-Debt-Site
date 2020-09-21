@@ -6,7 +6,7 @@
       "src": "logo-black.png",
       "sizes": "240x240",
       "type": "image/png"
-    },
+    }
   ],
   "start_url": ".",
   "display": "standalone",
