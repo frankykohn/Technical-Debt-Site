@@ -39,6 +39,20 @@ body {
     @include transform(scale(1.5,1));
     font-size: 6vw;
     letter-spacing: -0.1em;
+    transition: all 0.3s ease;
+    > a {
+        text-decoration: none;
+        &:visited {
+            color: white;
+        }
+        &:hover {
+            color: white;
+            text-decoration: underline dotted white;
+        }
+        &:active {
+            filter: blur(2px);
+        }
+    }
 }
 
 .card-subtitle {
@@ -46,6 +60,7 @@ body {
     font-size: 4vw;
     letter-spacing: -0.1em;
     font-weight: 700;
+
 }
 
 .card-footer {

@@ -35,7 +35,8 @@ import * as SOCIAL_LINK from '../../constants/social-links'
 
 export default class FlipScreen extends Component {
 
-    componentWillMount()
+
+    componentDidMount()
     {
         // override overflow to make only this page not scrollable
         document.body.style.backgroundColor = "black";
@@ -52,7 +53,7 @@ export default class FlipScreen extends Component {
                               <p className="title">Technical Debt</p>
                           </Col>
                           <Col xs={2}>
-                              <img src="/t-d.png" className="t-d"></img>
+                              <img src="/t-d.png" className="t-d" alt=""></img>
                           </Col>
                       </Row>
                       <Row className="body-container">
@@ -70,13 +71,13 @@ export default class FlipScreen extends Component {
                                     <div className="flip-card">
                                       <div className="flip-card-inner">
                                           <div className="flip-card-front">
-                                              <a className="flip-link" href={SOCIAL_LINK.FLIP_TONEDEN}><img className="flip-img" src="/flip-soundcloud-1000px.png"></img></a>
+                                              <a className="flip-link" href={SOCIAL_LINK.FLIP_TONEDEN}><img className="flip-img" alt="Flip Album Art" src="/flip-soundcloud-1000px.png"></img></a>
                                           </div>
                                           <div className="flip-card-back">
                                             <div className="card-text">
-                                              <h2 className="card-title">Flip</h2>
+                                              <h2 className="card-title"><a href={SOCIAL_LINK.FLIP_TONEDEN}>Flip</a></h2>
                                               <h3 className="card-subtitle">October 2020</h3>
-                                              <p className="card-footer">Artwork by <a className="link-animation-full" href="/">Emilia Tongson</a></p>
+                                              <p className="card-footer">Artwork by <a className="link-animation-full" href={SOCIAL_LINK.EMILIA}>Emilia Tongson</a></p>
                                             </div>
                                           </div>
                                       </div>
@@ -89,7 +90,7 @@ export default class FlipScreen extends Component {
                   <Col>
                     <Row>
                       <Col sm={6} md={12}>
-                          <a href={SOCIAL_LINK.BRYSON}><img className="bryson-graphic" src="/20200731_technicaldebt_logo_v2_bryson.png"></img></a>
+                          <a href={SOCIAL_LINK.BRYSON}><img alt="Logo by Bryson" className="bryson-graphic" src="/20200731_technicaldebt_logo_v2_bryson.png"></img></a>
                       </Col>
                       <Col sm={12} md={12}>
                         <Row className="social-link-container">

@@ -2,7 +2,7 @@ import React from 'react';
 import Background from './components/Background/Background';
 
 import MainPage from './screens/MainPage/MainPage';
-import RevPage from './screens/RevPage/RevPage';
+//import RevPage from './screens/RevPage/RevPage';
 import FlipScreen from './screens/FlipScreen/FlipScreen';
 
 import {
@@ -22,9 +22,9 @@ function App() {
         <Background/>
         <MainPage/>
       </Route>
-      <Route exact path='/rev'>
+      {/*<Route exact path='/rev'>
         <RevPage/>
-      </Route>
+      </Route>*/}
       <Route exact path='/'>
         <FlipScreen/>
       </Route>

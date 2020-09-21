@@ -34,4 +34,12 @@
   letter-spacing: -0.1em;
   @include transform(scale(1.8,0.8));
   padding: 0px;
+  > a {
+      text-decoration: none;
+      color: inherit;
+      &:hover {
+          color: inherit;
+          text-decoration: none;
+      }
+  }
 }

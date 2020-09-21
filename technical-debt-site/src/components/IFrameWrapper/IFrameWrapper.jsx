@@ -17,7 +17,7 @@ export default class IFrameWrapper extends Component {
       return (
           <div>
             {this.state.isLoading && <Spinner name="cube-grid" style={{width: '100%'}}/>}
-            <iframe ref="iframe" style={{ display: this.state.isLoading ? 'none' : ''}} onLoad={this.doneLoading} {...this.props}/>
+            <iframe ref="iframe" style={{ visibility: this.state.isLoading ? 'hidden' : ''}} onLoad={this.doneLoading} {...this.props}/>
           </div>
       )
 

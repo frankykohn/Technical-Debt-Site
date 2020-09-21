@@ -5,8 +5,6 @@ import {
   Col
 } from 'react-bootstrap';
 
-import p5 from 'p5';
-
 import RevSphere from '../../components/RevSphere/RevSphere';
 
 
