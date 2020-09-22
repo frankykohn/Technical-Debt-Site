@@ -51,11 +51,7 @@ $colorSet:
 }
 
 @media only screen and (max-width: 768px){
-  .news-feed-container-left {
-      width: 16%;
-  }
-  .news-feed-container-right {
+  .news-feed-container {
       display: none;
-
   }
 }

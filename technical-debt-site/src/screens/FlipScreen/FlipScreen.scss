@@ -269,21 +269,26 @@ body {
         position: fixed;
     }
     .title {
-        font-size: 7vh;
+        font-size: 6vh;
     }
     .link {
         font-size: 4vh;
     }
     .card-title {
         font-size: 6vh;
+        padding-top: 100px;
     }
     .card-subtitle {
-        font-size: 5vh;
+        font-size: 4.5vh;
     }
     .t-d {
-      width: 7vh
+      width: 7vh;
+      margin-top: 50px;
     }
     .flip-img {
         width: 100%;
+    }
+    .card-footer {
+        font-size: 2vh;
     }
 }

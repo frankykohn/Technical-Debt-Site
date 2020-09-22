@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+
+import './MainPage.scss';
+
 import {
   Container,
   Row,
@@ -19,7 +22,7 @@ import {
   RiInstagramLine
 } from "react-icons/ri";
 
-import './MainPage.scss';
+
 
 import * as SOCIAL_LINK from '../../constants/social-links';
 
@@ -30,7 +33,7 @@ export default class MainPage extends Component {
         return (
           <Container fluid style={{textAlign: 'center'}}>
               <Row>
-                <Col xs={{span: 8, offset: 3}} md={{span: 8, offset: 2}} className="content-container-header">
+                <Col xs={{span: 10, offset: 1}} md={{span: 8, offset: 2}} className="content-container-header">
                   <Row>
                     <Col xs={12}>
                       <h1 className="header"><Link to="/">Technical Debt</Link></h1>
@@ -46,7 +49,7 @@ export default class MainPage extends Component {
               </Row>
               <Row>
                 {/* LEFT COLUMN */}
-                <Col xs={{span: 10, offset: 2}} md={{span: 5, offset: 1}}>
+                <Col xs={{span: 10, offset: 1}} md={{span: 5, offset: 1}}>
                   <Row>
                     <Col sm={1}></Col>
                     <Col sm={10} className="content-container">
@@ -70,7 +73,7 @@ export default class MainPage extends Component {
                   </Row>
                 </Col>
                 {/* RIGHT COLUMN */}
-                <Col xs={{span: 10, offset: 2}} md={{span: 5, offset: 0}}>
+                <Col xs={{span: 10, offset: 1}} md={{span: 5, offset: 0}}>
                   <Row>
                     <Col sm={1}></Col>
                     <Col sm={10} className="content-container">
