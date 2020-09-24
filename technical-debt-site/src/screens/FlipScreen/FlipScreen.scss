@@ -265,14 +265,14 @@ body {
         margin-left: 0px;
     }
     .social-link-container {
-        bottom: 20px;
+        bottom: 25px;
         position: fixed;
     }
     .title {
-        font-size: 6vh;
+        font-size: 11vw;
     }
     .link {
-        font-size: 4vh;
+        font-size: 5vh;
     }
     .card-title {
         font-size: 6vh;
@@ -282,11 +282,11 @@ body {
         font-size: 4.5vh;
     }
     .t-d {
-      width: 7vh;
-      margin-top: 50px;
+        display: none;
     }
     .flip-img {
-        width: 100%;
+        width: 90vw;
+        height: auto;
     }
     .card-footer {
         font-size: 2vh;
