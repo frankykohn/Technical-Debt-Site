@@ -50,7 +50,11 @@ body {
             text-decoration: underline dotted white;
         }
         &:active {
+            color: white;
             filter: blur(2px);
+        }
+        &:link {
+            color: white;
         }
     }
 }
@@ -283,6 +287,9 @@ body {
     }
     .t-d {
         display: none;
+    }
+    .link-animation::before {
+        width: 48%;
     }
     .flip-img {
         width: 90vw;

@@ -8,7 +8,7 @@ export const SPOTIFY = "https://open.spotify.com/artist/0o7Y6yat1EfVMtYZQ5BcGv?s
 
 export const EMILIA = "https://www.emiliatongson.com/"
 
-export const FLIP_TONEDEN = "https://soundcloud.com/technicaldebt"
+export const FLIP_PRESAVE = "https://distrokid.com/hyperfollow/technicaldebt/flip-2"
 
 export const BRYSON = "https://www.instagram.com/brightsun__730/"
 
