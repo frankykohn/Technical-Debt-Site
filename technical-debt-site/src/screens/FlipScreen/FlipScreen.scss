@@ -68,7 +68,7 @@ body {
 }
 
 .card-footer {
-    font-size: 2vw;
+    font-size: 1vw;
     letter-spacing: -0.1em;
     @include transform(scale(2.5,1.8));
 }
@@ -296,6 +296,6 @@ body {
         height: auto;
     }
     .card-footer {
-        font-size: 2vh;
+        font-size: 2vw;
     }
 }
