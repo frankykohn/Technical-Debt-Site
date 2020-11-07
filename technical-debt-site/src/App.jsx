@@ -2,13 +2,14 @@ import React from 'react';
 import Background from './components/Background/Background';
 
 import MainPage from './screens/MainPage/MainPage';
-//import RevPage from './screens/RevPage/RevPage';
+import RevPage from './screens/RevPage/RevPage';
 import FlipScreen from './screens/FlipScreen/FlipScreen';
 
 import {
   Route,
   withRouter,
-  Switch
+  Switch,
+  Redirect
 } from 'react-router-dom';
 
 import './App.scss';
@@ -24,14 +25,14 @@ function App() {
             <Background/>
             <MainPage/>
           </Route>
-          {/*<Route exact path='/rev'>
-            <RevPage/>
-          </Route>*/}
-          <Route exact path='/'>
-            <FlipScreen/>
+          <Route exact path='/rev'>
+              <RevScreen/>
           </Route>
-          <Route>
-            <FlipScreen/>
+          <Route exact path='/flip'>
+              <FlipScreen/>
+          </Route>
+          <Route exact path='/'>
+              <Redirect to='/rev'/>
           </Route>
       </Switch>
     </div>
