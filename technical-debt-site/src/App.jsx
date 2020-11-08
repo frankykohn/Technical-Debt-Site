@@ -26,7 +26,7 @@ function App() {
             <MainPage/>
           </Route>
           <Route exact path='/rev'>
-              <RevScreen/>
+              <RevPage/>
           </Route>
           <Route exact path='/flip'>
               <FlipScreen/>
