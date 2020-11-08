@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import p5 from 'p5';
 
+import { REV_FANLINK } from '../../constants/social-links';
+
 import "./RevSphere.scss"
 import Garamond from './Adobe Garamond Small Caps & Old Regular.otf';;
 
@@ -103,6 +105,17 @@ export default class RevSphere extends Component {
             return Math.sqrt( ((x1 - x2) ** 2) + ((y1 - y2) ** 2));
         }
 
+        p.mousePressed = () => {
+            if(isSphereSelected)
+                window.location = REV_FANLINK;
+
+            if(isGallerySelected)
+                window.location = "https://technicaldebt.page/gallery";
+            
+            if(isFlipSelected)
+                window.location = "https://technicaldebt.page/flip";
+        }
+
         p.mouseMoved = () => {
             isSphereSelected = false;
             isGallerySelected = false;
@@ -133,7 +146,7 @@ export default class RevSphere extends Component {
 
         p.draw = () => {
             p.background("#050003");
-            
+
             rampValues();
 
             p.rotateZ(-p.PI/2);
@@ -214,8 +227,6 @@ export default class RevSphere extends Component {
             {
                 flipFill = 50;
             }
-
-            console.log(flipFill);
         }
 
     }
