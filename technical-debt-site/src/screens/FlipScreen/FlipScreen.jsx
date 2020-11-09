@@ -63,7 +63,10 @@ export default class FlipScreen extends Component {
                           <Col sm={12} md={9}>
                               <Row>
                                   <Col>
-                                      <p className="link-white"><Link className="link-animation" to="/gallery">Gallery</Link></p>
+                                      <p className="link-white">
+                                        <Link className="link-animation" to="/gallery">Gallery</Link>
+                                        <Link style={{paddingLeft: "10%"}} className="link-animation-rev" to="/rev">Rev</Link>
+                                      </p>
                                   </Col>
                               </Row>
                               <Row>
