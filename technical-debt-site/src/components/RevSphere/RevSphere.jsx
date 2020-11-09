@@ -16,7 +16,7 @@ export default class RevSphere extends Component {
 
     sketch = p => {
 
-        const numPoints = 15;
+        const numPoints = 20;
         const wiggle = 8;
         let r, size;
         let sphere = [];
@@ -28,6 +28,8 @@ export default class RevSphere extends Component {
         let isFlipSelected = false;
         let strokeV, fillV, galleryFill, flipFill;
         let font;
+
+        let prevScrollY;
 
         function calculateDimensions()
         {
@@ -83,6 +85,7 @@ export default class RevSphere extends Component {
             fillV = 60;
             flipFill = 50;
             galleryFill = 50;
+            prevScrollY = 0;
 
             // init font
             p.textFont(font);
@@ -98,6 +101,20 @@ export default class RevSphere extends Component {
 
         p.mouseWheel = (e) => {
             scrollRotation += e.delta * rotationScale;
+        }
+
+        p.touchStarted = () => {
+            if(p.touches[0])
+                prevScrollY = p.touches[0].y;
+        }
+
+        p.touchMoved = () => {
+            if(p.touches[0])
+            {   
+                const delta = prevScrollY - p.touches[0].y;
+                scrollRotation += delta * rotationScale;
+                prevScrollY = p.touches[0].y;
+            }
         }
 
         function dist(x1, x2, y1, y2)
@@ -117,6 +134,7 @@ export default class RevSphere extends Component {
         }
 
         p.mouseMoved = () => {
+            prevScrollY = p.mouseY;
             isSphereSelected = false;
             isGallerySelected = false;
             isFlipSelected = false;
