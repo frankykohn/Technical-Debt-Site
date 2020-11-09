@@ -53,6 +53,13 @@ export default class MainPage extends Component {
                   <Row>
                     <Col sm={1}></Col>
                     <Col sm={10} className="content-container">
+                      <IFrameWrapper width="100%" height="480" title="NKLLT" scrolling="no" frameBorder="no" allow="autoplay" src="https://audius.co/embed/track?id=150874&ownerId=66149&flavor=card"/>
+                    </Col>
+                    <Col sm={1}></Col>
+                  </Row>
+                  <Row>
+                    <Col sm={1}></Col>
+                    <Col sm={10} className="content-container">
                       <IFrameWrapper width="100%" height="300" title="HARD" scrolling="no" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/832022116&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"/>
                     </Col>
                     <Col sm={1}></Col>
@@ -77,10 +84,16 @@ export default class MainPage extends Component {
                   <Row>
                     <Col sm={1}></Col>
                     <Col sm={10} className="content-container">
+                      <IFrameWrapper src="https://open.spotify.com/embed/track/5s04y1fnQrxgk3sUY6O5wB" width="100%" height="380" title="Flip" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
+                    </Col>
+                    <Col sm={1}></Col>
+                  </Row>
+                  <Row>
+                    <Col sm={1}></Col>
+                    <Col sm={10} className="content-container">
                       <IFrameWrapper src="https://open.spotify.com/embed/track/6mrtFY5Etu5KnhdEQP25NS" width="100%" height="380" title="WHRVR" frameBorder="0" allowtransparency="true" allow="encrypted-media"/>
                     </Col>
                     <Col sm={1}></Col>
-
                   </Row>
                   <Row>
                     <Col sm={1}></Col>
