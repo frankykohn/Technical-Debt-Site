@@ -29,8 +29,8 @@ export default class RevPage extends Component {
           <Container fluid className="rev-page-container">
               <RevSphere/>
               <div className="song-text-container">
-                    <p>Rev</p>
-                    <p>Technical Debt | Vooo</p>
+                    <p className="song-text">Rev</p>
+                    <p className="song-text">Technical Debt | Vooo</p>
               </div>
               <div className="social-media-links-container">
                     <a id="spotify" href={SOCIAL_LINK.SPOTIFY}>❇︎</a>
