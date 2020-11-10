@@ -16,6 +16,8 @@ export default class RevSphere extends Component {
 
     sketch = p => {
 
+        const mobileWidth = 768;
+
         const numPoints = 20;
         const wiggle = 8;
         let r, size;
@@ -198,14 +200,17 @@ export default class RevSphere extends Component {
 
             p.line(0, 0, -r*2, 0, 0, r);
             p.line(0, 0, r, 0, 0, r*2);
+            if(p.windowWidth > mobileWidth)
+            {
+                p.rotateY(p.PI/2);
 
-            p.rotateY(p.PI/2);
-
-            p.fill(galleryFill);
-            p.text("GALLERY", r*1.6, 50);
+                p.fill(galleryFill);
+                p.text("GALLERY", r*1.6, 50);
             
-            p.fill(flipFill);
-            p.text("FLIP", -r*1.6, -50);
+                p.fill(flipFill);
+                p.text("FLIP", -r*1.6, -50);
+            }
+            
             
 
         }

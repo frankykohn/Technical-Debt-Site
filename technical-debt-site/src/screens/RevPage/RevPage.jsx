@@ -5,6 +5,10 @@ import {
   Col
 } from 'react-bootstrap';
 
+import {
+    Link
+} from "react-router-dom";
+
 import RevSphere from '../../components/RevSphere/RevSphere';
 
 import './RevPage.scss';
@@ -37,6 +41,10 @@ export default class RevPage extends Component {
                     <a id="matter" href={SOCIAL_LINK.MATTER}>❖</a>
                     <a id="audius" href={SOCIAL_LINK.AUDIUS}>✥</a>
                     <a id="instagram" href={SOCIAL_LINK.INSTAGRAM}>✾</a>
+              </div>
+              <div className="mobile-links">
+                    <Link className="mobile-link-purple" to="/gallery">Gallery</Link>
+                    <Link className="mobile-link-blue" to="/flip">Flip</Link>
               </div>
           </Container>
         )
