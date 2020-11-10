@@ -33,8 +33,8 @@ export default class RevPage extends Component {
           <Container fluid className="rev-page-container">
               <RevSphere/>
               <div className="song-text-container">
-                    <p className="song-text">Rev</p>
-                    <p className="song-text">Technical Debt | Vooo</p>
+                    <p className="song-text"><a href={SOCIAL_LINK.REV_FANLINK}>Rev</a></p>
+                    <p className="song-text">Technical Debt | <a href="https://linktr.ee/vooo">Vooo</a></p>
               </div>
               <div className="social-media-links-container">
                     <a id="spotify" href={SOCIAL_LINK.SPOTIFY}>❇︎</a>
@@ -43,7 +43,8 @@ export default class RevPage extends Component {
                     <a id="instagram" href={SOCIAL_LINK.INSTAGRAM}>✾</a>
               </div>
               <div className="mobile-links">
-                    <Link className="mobile-link-purple" to="/gallery">Gallery</Link>
+                    <a className="mobile-link-purple" href={SOCIAL_LINK.REV_FANLINK}>Presave</a>
+                    <Link className="mobile-link-mid" to="/gallery">Gallery</Link>
                     <Link className="mobile-link-blue" to="/flip">Flip</Link>
               </div>
           </Container>
