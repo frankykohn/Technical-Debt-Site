@@ -1,0 +1,3 @@
+[submodule "src/external-js/dostoy"]
+	path = src/external-js/dostoy
+	url = git@github.com:frankykohn/dostoy.git
