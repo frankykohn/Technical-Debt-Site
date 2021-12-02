@@ -1,15 +1,15 @@
 <template> 
-  <Terminal/>
+  <TerminalWrapper/>
 </template>
 
 <script>
 import './assets/scss/app.scss'
-import Terminal from "./components/Terminal.vue"
+import TerminalWrapper from "./components/TerminalWrapper.vue"
 
 export default {
   name: 'App',
   components: {
-      Terminal
+      TerminalWrapper
   }
 }
 </script>
