@@ -53,6 +53,31 @@ export default {
             this.terminal = new Terminal();
             this.terminal.open(this.$refs.terminal);
             this.terminal.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+            var cmd = '';
+            this.terminal.setOption('cursorBlink', true);
+            this.terminal.on('key', function (key, ev) {
+                var printable = (
+                    !ev.altKey && !ev.altGraphKey && !ev.ctrlKey && !ev.metaKey
+                );
+
+                if (ev.keyCode == 13) {
+                    if(cmd === 'clear')
+                    {
+                    this.terminal.clear();
+                    }
+                    cmd = '';
+                    this.terminal.prompt();
+                } else if (ev.keyCode == 8) {
+                    // Do not delete the prompt
+                    console.log(this.terminal.rows);
+                    if (this.terminal.x > 2) {
+                    this.terminal.write('\b \b');
+                    }
+                } else if (printable) {
+                    cmd += key;
+                    this.terminal.write(key);
+                }
+            });
         }
     }
 }
