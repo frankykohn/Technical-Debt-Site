@@ -1,24 +1,19 @@
 <template> 
-  <div>
-  </div>
+  <Terminal/>
 </template>
 
 <script>
+import './assets/scss/app.scss'
+import Terminal from "./components/Terminal.vue"
 
 export default {
   name: 'App',
   components: {
+      Terminal
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
